@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/subpages.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass"/>
+    <link rel="shortcut icon" type="image/png" href="../staticimages/favicon.ico" />
+    <title>CSCB20 - {{name}}</title>
+  </head>
+
+  <body>
+
+    <header class="header">
+    <img src="../static/images/uoft.png" alt="UofT" id="logo">
+    <a href="/"><h1>CSCB20</h1></a>
+    <ul class="main-nav">
+      <li><a href="dashboard">Dashboard</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="syllabus">Syllabus</a></li>
+      <li><a href="assignments">Assignments</a></li>
+      <li><a href="labs">Labs</a></li>
+      <li><a href="course_team">Course Team</a></li>
+      <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Piazza</a></li>
+      <li><a href="feedback">Feedback</a></li>
+      <li><a href="logout">Logout</a></li>
+    </ul>
+  </header>
+
+    <div class="container-1">
+      <div id="home-header-title">
+         <h1><strong>Dashboard</strong></h1>
+         <h3>Welcome {{name}}!</h3>
+       </div>
+    </div>
+
+    <div class="container-2">
+      <div class="template">
+        <h1>Your Marks</h1>
+        <ul>
+          {% for assignment in data %}
+            <li><strong>{{ assignment[0] }}</strong>: {{assignment[1]}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="template">
+        <h1>Remark Request</h1>
+        <form action="/remark" method="post">
+          Assignment:
+          <select name="assignment">
+            {% for assignment in data %}
+              <option>{{ assignment[0] }}</option>
+            {% endfor %}
+          </select>
+          <br>
+          Reason:
+          <br>
+          <textarea placeholder="What's your reason?" name="reasons"></textarea>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://www.utsc.utoronto.ca/cms/computer-science-1">Faculty Of CS</a>
+      <h6>Designed by Reizwan and Jaden</h6>
+    </footer>
+  </body>
+</html>

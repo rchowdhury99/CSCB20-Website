@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/subpages.css" />
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="../static/images/favicon.ico" />
+    <title>CSCB20 - Student Feedback</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <img src="../static/images/uoft.png" alt="UofT" id="logo" />
+      <a href="/"><h1>CSCB20</h1></a>
+      <ul class="main-nav">
+        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="syllabus">Syllabus</a></li>
+        <li><a href="assignments">Assignments</a></li>
+        <li><a href="labs">Labs</a></li>
+        <li><a href="course_team">Course Team</a></li>
+        <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Piazza</a></li>
+        <li><a href="feedback">Feedback</a></li>
+        <li><a href="logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="container-1">
+      <div id="home-header-title">
+        <h1>Student Feedback</h1>
+      </div>
+    </div>
+
+    <div class="container-2">
+      <div class="template">
+        <h2>Your opinion matters!</h2>
+        <strong>
+        <ul>
+          <li>What do you like about the instructor teaching?</li>
+          <li>What do you recommend the instructor to do to improve their teaching?</li>
+          <li>What do you like about the labs?</li>
+          <li>What do you recommend the lab instructors to do to improve their lab teaching?</li>
+        </ul>
+        </strong>
+      </div>
+
+      <div class="template">
+        <div id="feedback">
+          <h3>Feedback</h3>
+          <h4>Instructor:</h4>
+          <select id="instructor-options">
+            {% for instructor in data %}
+              <option name="{{instructor[1]}}">{{instructor[0]}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <form onsubmit="getFeedback()">
+          <textarea id="feedback-card-content" placeholder="What's your feedback?"></textarea>
+          <button type="submit">Submit!</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://www.utsc.utoronto.ca/cms/computer-science-1">Faculty Of CS</a>
+      <h6>Designed by Reizwan and Jaden</h6>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/subpages.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/auth.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass"/>
+    <link rel="shortcut icon" type="image/png" href="../static/images/favicon.ico" />
+    <title>CSCB20 - My Account</title>
+  </head>
+
+  <body>
+
+    <div class="container-1">
+      <div id="home-header-title">
+         <h1><strong>CSCB20</strong> Introduction to Databases & Web Applications</h1>
+         <h3>Winter 2019</h3>
+       </div>
+    </div>
+
+    <div class="container-2">
+      <div class="template">
+        <form action="/signup" method="post">
+          Full Name: <input type="text" name="name">
+          <br>
+          UTOR ID: <input type="text" name="utorid">
+          <br>
+          Password: <input type="password" name="password">
+          <br>
+          <select name="user_type">
+            <option>Student</option>
+            <option>Instructor</option>
+          </select>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://www.utsc.utoronto.ca/cms/computer-science-1">Faculty Of CS</a>
+      <h6>Designed by Reizwan and Jaden</h6>
+    </footer>
+  </body>
+</html>

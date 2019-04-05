@@ -1,0 +1,102 @@
+.template {
+  width: 47%;
+  padding: 1%;
+  background-color: white;
+  min-width: 400px;
+  border: solid 1px;
+  box-shadow: 1px 2px #888888;
+  text-align: center;
+  position: relative;
+}
+
+.template h3 {
+  text-decoration: underline;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  justify-content: space-between;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  margin-top: 0%;
+  padding-top: 0%;
+}
+
+.container-2 img {
+  width: 50%;
+}
+
+#opinion h3 {
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100px;
+}
+
+button {
+  background-color: #0090b8;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#instructor-options {
+  margin-bottom: 2%;
+}
+
+#feedback h4 {
+  margin-bottom: 1%;
+}
+
+#student-feedback {
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-bottom: 20%;
+}
+
+#student-marks-table {
+  width: 100%;
+  display: table;
+}
+
+.table-header-cell{
+  display: table-cell;
+  padding: 1%;
+  text-align: center;
+}
+
+#resp-table-body{
+  display: table-row-group;
+}
+
+.resp-table-row{
+  display: table-row;
+}
+
+.table-body-cell{
+  display: table-cell;
+}
+
+.container-2 h1 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.mark-input {
+  width: 31%;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/subpages.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass"/>
+    <link rel="shortcut icon" type="image/png" href="../static/images/favicon.ico" />
+    <title>CSCB20 - {{ name }}</title>
+  </head>
+
+  <body>
+
+    <header class="header">
+    <img src="../static/images/uoft.png" alt="UofT" id="logo">
+    <a href="/"><h1>CSCB20</h1></a>
+    <ul class="main-nav">
+      <li><a href="dashboard">Dashboard</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="syllabus">Syllabus</a></li>
+      <li><a href="assignments">Assignments</a></li>
+      <li><a href="labs">Labs</a></li>
+      <li><a href="course_team">Course Team</a></li>
+      <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Piazza</a></li>
+      <li><a href="feedback">Feedback</a></li>
+      <li><a href="logout">Logout</a></li>
+    </ul>
+  </header>
+
+    <div class="container-1">
+      <div id="home-header-title">
+         <h1><strong>Dashboard</strong></h1>
+         <h3>Welcome {{name}}!</h3>
+       </div>
+    </div>
+
+    <div class="container-2">
+      <div class="template">
+        <h1>Student Marks</h1>
+        <div id="student-marks-table">
+          <div class="table-header-cell"><h4>UTor ID</h4></div>
+          <div class="table-header-cell"><h4>A1</h4></div>
+          <div class="table-header-cell"><h4>A2</h4></div>
+          <div class="table-header-cell"><h4>A3</h4></div>
+          <div class="table-header-cell"><h4>Midterm</h4></div>
+          <div class="table-header-cell"><h4>Final</h4></div>
+
+          <div id="resp-table-body">
+            {% for item in data %}
+              <div class="resp-table-row" name="{{item[0]}}">
+                <div class="table-body-cell">{{item[0]}}</div>
+                <div class="table-body-cell"><input class="mark-input" type="number" name="a1" value="{{item[1]}}"></div>
+                <div class="table-body-cell"><input class="mark-input" type="number" name="a2" value="{{item[2]}}"></div>
+                <div class="table-body-cell"><input class="mark-input" type="number" name="a3" value="{{item[3]}}"></div>
+                <div class="table-body-cell"><input class="mark-input" type="number" name="midterm" value="{{item[4]}}"></div>
+                <div class="table-body-cell"><input class="mark-input" type="number" name="final" value="{{item[5]}}"></div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <form onsubmit="updateMarks()">
+            <button type="submit" id="update-marks-button">Update Marks</button>
+          </form>
+
+        </div>
+      </div>
+
+      <div class="template">
+        <h1>Remark Requests</h1>
+        <div id="student-marks-table">
+
+          <div class="table-header-cell"><h4>UTor ID</h4></div>
+          <div class="table-header-cell"><h4>Assignment</h4></div>
+          <div class="table-header-cell"><h4>Reason</h4></div>
+          <div id="resp-table-body">
+            {% for item in remarks %}
+              <div class="resp-table-row">
+                <div class="table-body-cell">{{item[0]}}</div>
+                <div class="table-body-cell">{{item[1]}}</div>
+                <div class="table-body-cell">{{item[2]}}</div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://www.utsc.utoronto.ca/cms/computer-science-1">Faculty Of CS</a>
+      <h6>Designed by Reizwan and Jaden</h6>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>
